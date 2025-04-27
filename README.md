@@ -1,8 +1,9 @@
-## Description
+# Description
 
-This repository contains the code for a senior design/research project developed at Arkansas Tech University. The project aims to implement real-time semantic segmentation on a Raspberry Pi using Coral acceleration.
+This repository contains the code for a senior design/research project developed at Arkansas Tech University. The project aims to implement real-time semantic segmentation on a Raspberry Pi 4 using Coral acceleration for real-world litter detection.
 
-It utilizes the YOLOv11n model via the `ultralytics` library and leverages Google's `pycoral` library for hardware acceleration on Coral devices.
+It utilizes the custom YOLOv11n-seg model created via `ultralytics` and leverages Google's `pycoral` library for hardware acceleration on Coral devices.
+The models are in a seperate repository due to licensing.
 
 **Note:** This project was developed for academic purposes (undergraduate senior design/research).
 
@@ -13,30 +14,55 @@ It utilizes the YOLOv11n model via the `ultralytics` library and leverages Googl
 * [Accelerated inference using Google Coral Edge TPU]
 * [Built with Python and libraries like NumPy, Picamera2]
 
-## Installation
+# Setup & Usage
 
+## Prerequisites 
+### Change RPI4 Windowing System
+* You will need to change the RPI4's windowing system from Wayland to X11 for compatibility with Opencv's GUI
+* See: [How to Switch from Wayland to X11 on Raspberry Pi OS Bookworm](https://www.geeks3d.com/20240509/how-to-switch-from-wayland-to-x11-on-raspberry-pi-os-bookworm/)
+
+### Create Python 3.11 virtual environment for picamera2 compatibility
+Open new terminal on RPI4
 ```bash
-# 1. Clone the repository
-git clone [Your Repository URL]
-cd [Your Repository Directory]
+# In your Python 3.11+ environment
+# Follow setup instructions for picamera2 (if necessary)
 
-# 2. Create and activate a virtual environment (recommended)
-python3 -m venv venv
-source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+pip install posix_ipc numpy picamera2
+```
+* See:   [Picamera2 Installation](https://github.com/raspberrypi/picamera2/blob/main/README.md)
 
-# 3. Install dependencies
-pip install -r requirements.txt
 
-# 4. Follow setup instructions for pycoral (if necessary)
-# See: [https://coral.ai/software/#pycoral-api](https://coral.ai/software/#pycoral-api)
+### Create Python 3.9 virtual environment for pycoral compatibility
+Open new terminal on RPI4
+```bash
+# Activate your Python 3.9 environment
+# Follow setup instructions for pycoral
+```
+* See:   [Get Started with Pycoral USB](https://coral.ai/docs/accelerator/get-started/)
+```
+pip install posix_ipc numpy opencv-python pycoral
 
-# 5. Follow setup instructions for picamera2 (if necessary)
-# See: [https://github.com/raspberrypi/picamera2](https://github.com/raspberrypi/picamera2)
-(Add any other specific setup steps required)Usage# Example command to run the main script
-python main.py [arguments]
-(Provide clear instructions on how to run your code)LicensingThis project combines code developed by the authors with several third-party libraries under various licenses.Project CodeThe original code specific to this project (i.e., the code written by the project authors, excluding third-party libraries) is licensed under the MIT License. A copy of the MIT License can be found in the LICENSE file in the root of this repository. You are free to use, modify, and distribute this specific code under the terms of the MIT License.MIT License
+```
+## REBOOT RPI4 AFTER INSTALLING NEW SOFTWARE AND CHANGING WINDOWING SYSTEM!
 
-Copyright (c) [Year] [Your Name/Group Name]
+
+## Running Scripts Seperately
+* To run these scripts in their respective environments, use the provided CLI line
+  underneath "RUN THIS SCRIPT FIRST" or "RUN THIS SCRIPT 2nd"
+* You will probably have to change directory paths based on your setup.
+
+
+## Ending the Processes
+* Use 'ctrl + C' in one of the terminals
+* Close both terminals. There is an issue with the rpicamera not ending its process correctly, you will get an error such as 'pipeline in use'
+* To rerun you will have to open new terminals and activate the environments again.
+
+
+
+# Licensing:
+This project combines code developed by the authors with several third-party libraries under various licenses.Project CodeThe original code specific to this project (i.e., the code written by the project authors, excluding third-party libraries) is licensed under the MIT License. A copy of the MIT License can be found in the LICENSE file in the root of this repository. You are free to use, modify, and distribute this specific code under the terms of the MIT License.MIT License
+
+Copyright (c) 2025 Benjamin Leon
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -55,4 +81,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-(Consider adding a separate LICENSE file with the full MIT text and referencing it here)DependenciesThis project relies on several third-party libraries with their own licenses. Compliance with these licenses is required when using or distributing this project. Key dependencies include:ultralytics (YOLOv11n Model): Licensed under the GNU Affero General Public License v3.0 (AGPL-3.0).Implication: This is a strong copyleft license. If you distribute this project, or a modified version of it, the AGPL-3.0 requires that the entire combined work be licensed under AGPL-3.0 and that the complete corresponding source code be made available. If you run a modified version on a network server and allow users to interact with it, you must also provide the source code to those users under the AGPL-3.0.License details: https://github.com/ultralytics/ultralytics/blob/main/LICENSEpycoral: Licensed under the Apache License 2.0.This is a permissive license allowing use and modification, but requires preservation of copyright and license notices.License details: https://github.com/google-coral/pycoral/blob/master/LICENSEPython: The project is written in Python (versions 3.9/3.11 used during development). Python is distributed under the Python Software Foundation License (PSFL), a permissive, GPL-compatible license.License details: https://docs.python.org/3/license.htmlNumPy: Licensed under the BSD 3-Clause "New" or "Revised" License.License details: https://github.com/numpy/numpy/blob/main/LICENSE.txtposix_ipc: Typically licensed under the MIT License. (Verify the specific version you installed if necessary).License details: (Usually found in the package distribution or source repository, e.g., https://github.com/osvenskan/posix_ipc/blob/master/LICENSE)picamera2: Licensed under the BSD 3-Clause "New" or "Revised" License.License details: https://github.com/raspberrypi/picamera2/blob/main/LICENSESummary: While the original contributions to this project are under the permissive MIT license, the inclusion of the ultralytics library means that distribution of the combined work is governed by the terms of the AGPL-3.0 license. Please ensure you understand and comply with the terms of all included licenses, particularly the AGPL-3.0, if you plan to modify, distribute, or deploy this project.AcknowledgementsThis project utilizes the powerful YOLO models and library provided by Ultralytics (https://ultralytics.com/).Hardware acceleration is made possible by Google's Coral platform and the pycoral library (https://coral.ai/).Built upon the extensive Python ecosystem, including libraries like NumPy and Picamera2.[Acknowledge supervisors, funding sources, etc., if applicable]Contact
