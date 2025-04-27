@@ -19,3 +19,48 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+Dependencies
+This project relies on several third-party libraries with their own licenses. Compliance with these licenses is required when using or distributing this project. Key dependencies include:
+
+ultralytics (YOLOv11n Model): Licensed under the GNU Affero General Public License v3.0 (AGPL-3.0).
+
+Implication: This is a strong copyleft license. If you distribute this project, or a modified version of it, the AGPL-3.0 requires that the entire combined work be licensed under AGPL-3.0 and that the complete corresponding source code be made available. If you run a modified version on a network server and allow users to interact with it, you must also provide the source code to those users under the AGPL-3.0.
+
+License details: https://github.com/ultralytics/ultralytics/blob/main/LICENSE
+
+pycoral: Licensed under the Apache License 2.0.
+
+This is a permissive license allowing use and modification, but requires preservation of copyright and license notices.
+
+License details: https://github.com/google-coral/pycoral/blob/master/LICENSE
+
+Python: The project is written in Python (versions 3.9/3.11 used during development). Python is distributed under the Python Software Foundation License (PSFL), a permissive, GPL-compatible license.
+
+License details: https://docs.python.org/3/license.html
+
+NumPy: Licensed under the BSD 3-Clause "New" or "Revised" License.
+
+License details: https://github.com/numpy/numpy/blob/main/LICENSE.txt
+
+posix_ipc: Typically licensed under the MIT License. (Verify the specific version you installed if necessary).
+
+License details: (Usually found in the package distribution or source repository, e.g., https://github.com/osvenskan/posix_ipc/blob/master/LICENSE)
+
+picamera2: Licensed under the BSD 3-Clause "New" or "Revised" License.
+
+License details: https://github.com/raspberrypi/picamera2/blob/main/LICENSE
+
+Summary: While the original contributions to this project are under the permissive MIT license, the inclusion of the ultralytics library means that distribution of the combined work is governed by the terms of the AGPL-3.0 license. Please ensure you understand and comply with the terms of all included licenses, particularly the AGPL-3.0, if you plan to modify, distribute, or deploy this project.
+
+Acknowledgements
+This project utilizes the powerful YOLO models and library provided by Ultralytics (https://ultralytics.com/).
+
+Hardware acceleration is made possible by Google's Coral platform and the pycoral library (https://coral.ai/).
+
+Built upon the extensive Python ecosystem, including libraries like NumPy and Picamera2.
+
+[Acknowledge supervisors, funding sources, etc., if applicable]
+
+Contact
+benl4212@gmail.com
