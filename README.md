@@ -54,8 +54,8 @@ pip install posix_ipc numpy opencv-python pycoral
 
 ## Ending the Processes
 * Use 'ctrl + C' in one of the terminals
-* Close both terminals. There is an issue with the rpicamera not ending its process correctly, you will get an error such as 'pipeline in use'
-* To rerun you will have to open new terminals and activate the environments again.
+* Close both terminals.
+* There is an issue with the rpicamera not ending its process correctly, you will get an error such as 'pipeline in use' if you try to rerun in the same terminals.
 
 
 
