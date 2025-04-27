@@ -21,7 +21,8 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 Dependencies
-This project relies on several third-party libraries with their own licenses. Compliance with these licenses is required when using or distributing this project. Key dependencies include:
+This project relies on several third-party libraries with their own licenses. Compliance with these licenses is required when using or distributing this project. 
+Key dependencies include:
 
 ultralytics (YOLOv11n Model): Licensed under the GNU Affero General Public License v3.0 (AGPL-3.0).
 
