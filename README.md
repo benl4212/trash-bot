@@ -1,25 +1,32 @@
-# Description
+# Project Description
 
-This repository contains the code for a senior design/research project developed at Arkansas Tech University. The project aims to implement real-time semantic segmentation on a Raspberry Pi 4 using Coral acceleration for real-world litter detection.
+This repository contains the code for a senior design/research project developed at Arkansas Tech University. The project aims to implement real-time semantic segmentation on a Raspberry Pi 4 using Coral acceleration for real-world litter detection. 
 
-It utilizes the custom YOLOv11n-seg model created via `ultralytics` and leverages Google's `pycoral` library for hardware acceleration on Coral devices.
-The models are in a seperate repository due to licensing.
+The purpose for this repository is to provide a work around for Python version dependencies. When trying to use `imshow` function in a Python 3.9 venv with Picamera2 frame capture() function, the window does not appear.
+
+It utilizes the custom YOLOv11n-seg models created via `ultralytics` and leverages Google's `pycoral` library for hardware acceleration on a Coral USB Accelerator.
+The models are in a seperate repository due to licensing and can be found here: [https://github.com/benl4212/trash-bot-models](https://github.com/benl4212/trash-bot-models)
 
 **Note:** This project was developed for academic purposes (undergraduate senior design/research).
 
 ## Features
 
-* [List key features, e.g., Real-time object detection]
-* [Uses YOLOv11n model]
-* [Accelerated inference using Google Coral Edge TPU]
-* [Built with Python and libraries like NumPy, Picamera2]
+* POSIX_IPC to connect processes
+  * 1. Camera Frame Capture
+    2. Accelerated Model Inference
+* Outputs an inference window to visualize segmentation / detections
+  * Shows FPS and number of objects detected
+* Compatible Models: yolo11n-seg_int8_edgetpu.tflite
+  * Will require changes for box models
+
 
 # Setup & Usage
 
 ## Prerequisites 
 ### Change RPI4 Windowing System
 * You will need to change the RPI4's windowing system from Wayland to X11 for compatibility with Opencv's GUI
-* See: [How to Switch from Wayland to X11 on Raspberry Pi OS Bookworm](https://www.geeks3d.com/20240509/how-to-switch-from-wayland-to-x11-on-raspberry-pi-os-bookworm/)
+* You can easily check the windowing system with the command: `echo $XDG_CURRENT_DESKTOP`
+* To manually change to X11, see: [How to Switch from Wayland to X11 on Raspberry Pi OS Bookworm](https://www.geeks3d.com/20240509/how-to-switch-from-wayland-to-x11-on-raspberry-pi-os-bookworm/)
 
 ### Create Python 3.11 virtual environment for picamera2 compatibility
 Open new terminal on RPI4
@@ -29,7 +36,7 @@ Open new terminal on RPI4
 
 pip install posix_ipc numpy picamera2
 ```
-* See:   [Picamera2 Installation](https://github.com/raspberrypi/picamera2/blob/main/README.md)
+* For full list of dependencies, see this installation guide:   [Picamera2 Installation](https://github.com/raspberrypi/picamera2/blob/main/README.md)
 
 
 ### Create Python 3.9 virtual environment for pycoral compatibility
@@ -38,7 +45,7 @@ Open new terminal on RPI4
 # Activate your Python 3.9 environment
 # Follow setup instructions for pycoral
 ```
-* See:   [Get Started with Pycoral USB](https://coral.ai/docs/accelerator/get-started/)
+* For full list of dependencies, see this installation guide:   [Get Started with Pycoral USB](https://coral.ai/docs/accelerator/get-started/)
 ```
 pip install posix_ipc numpy opencv-python pycoral
 
@@ -60,7 +67,7 @@ pip install posix_ipc numpy opencv-python pycoral
 
 
 # Licensing:
-This project combines code developed by the authors with several third-party libraries under various licenses.Project CodeThe original code specific to this project (i.e., the code written by the project authors, excluding third-party libraries) is licensed under the MIT License. A copy of the MIT License can be found in the LICENSE file in the root of this repository. You are free to use, modify, and distribute this specific code under the terms of the MIT License.MIT License
+This project combines code developed by the authors with several third-party libraries under various licenses. The original code specific to this project (i.e., the code written by the project authors, excluding third-party libraries) is licensed under the MIT License. A copy of the MIT License can be found in the LICENSE file in the root of this repository. You are free to use, modify, and distribute this specific code under the terms of the MIT License.MIT License
 
 Copyright (c) 2025 Benjamin Leon
 
