@@ -24,9 +24,8 @@ SOFTWARE.
 # Dependencies
 ## This project relies on several third-party libraries with their own licenses. Compliance with these licenses is required when using or distributing this project. 
 
-## Key dependencies include:
 
-ultralytics (YOLOv11n Model): Licensed under the GNU Affero General Public License v3.0 (AGPL-3.0).
+Ultralytics (YOLOv11n Models): Licensed under the GNU Affero General Public License v3.0 (AGPL-3.0).
 Implication: This is a strong copyleft license. If you distribute this project, or a modified version of it, the AGPL-3.0 requires that the entire combined work be licensed under AGPL-3.0 and that the complete corresponding source code be made available. If you run a modified version on a network server and allow users to interact with it, you must also provide the source code to those users under the AGPL-3.0.
 License details: https://github.com/ultralytics/ultralytics/blob/main/LICENSE
 
@@ -62,11 +61,11 @@ Hardware acceleration is made possible by Google's Coral platform and the pycora
 Built upon the extensive Python ecosystem, including libraries like NumPy and Picamera2.
 
 # Project Acknowlegdements
-## Project funding source: 
-Arkansas Tech University
-## Project Advisor: 
-Dr. Ahamed 
-Contact https://www.atu.edu/stem/engineering/electrical/profiles/aahamed.php
+## Project Funding Source: Arkansas Tech University
 
-Contact
-benl4212@gmail.com
+## Project Advisor: 
+Dr. Ahamed, Webstite: [https://www.atu.edu/stem/engineering/electrical/profiles/aahamed.php](https://www.atu.edu/stem/engineering/electrical/profiles/aahamed.php)
+
+## Creator:
+benl4212 [https://github.com/benl4212](https://github.com/benl4212),
+  Contact: benl4212@gmail.com
