@@ -9,15 +9,19 @@ The models are in a seperate repository due to licensing and can be found here: 
 
 **Note:** This project was developed for academic purposes (undergraduate senior design/research).
 
+
 ## Features
 
 * POSIX_IPC to connect processes
-  * 1. Camera Frame Capture
-    2. Accelerated Model Inference
+   1. Camera Frame Capture
+   2. Accelerated Model Inference
+
 * Outputs an inference window to visualize segmentation / detections
   * Shows FPS and number of objects detected
+
 * Compatible Models: yolo11n-seg_int8_edgetpu.tflite
   * Will require changes for box models
+
 
 
 # Setup & Usage
@@ -44,12 +48,10 @@ Open new terminal on RPI4
 ```bash
 # Activate your Python 3.9 environment
 # Follow setup instructions for pycoral
+pip install posix_ipc numpy opencv-python pycoral
 ```
 * For full list of dependencies, see this installation guide:   [Get Started with Pycoral USB](https://coral.ai/docs/accelerator/get-started/)
-```
-pip install posix_ipc numpy opencv-python pycoral
 
-```
 ## REBOOT RPI4 AFTER INSTALLING NEW SOFTWARE AND CHANGING WINDOWING SYSTEM!
 
 
